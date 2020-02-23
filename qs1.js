@@ -59,3 +59,18 @@ function checkPassword(S) {
     return false;
   }
 }
+
+function checkPassword(S) {
+  if(S.length >= 6 && 
+    S.length <= 20 && 
+    /[a-z]/.test(S) && 
+    /[A-Z]/.test(S) && 
+    /\d/.test(S) && 
+    !(/\s/g.test(S)) &&
+    S.includes(":" || "!" || "@" || "#" || "$" || "%" || "^" || "&" || "*" || "(" || ")" || "_")
+    ){
+      return true;
+  } else {
+    return false;
+  }
+}
