@@ -46,3 +46,20 @@ function checkPassword(S) {
     return false;
   }
 }
+
+function checkPassword(S) {
+  let specialCharacter = [":", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_"];
+  let count = 0;
+  for (arrItem of specialCharacter) {
+    for (SItem of S) {
+      if (arrItem === SItem) {
+        count++;
+      }
+    }
+  }
+  if (count > 1 && S.length >= 6 && !(/\s/.test(S)) && /^[0-9A-Za-z]+$/.test(S)) {
+    return true;
+  } else {
+    return false;
+  }
+}
