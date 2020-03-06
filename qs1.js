@@ -13,9 +13,12 @@
 // 1. Given string S = "FooBar123!", the function should return true.
 // 2. Given string S = "foobar123!", the function should return false, because
 // there is no uppercase letter.
-// 3...
-// 4...
-// 5...
+// 3. Given string S = "foobar!", the function should return false, because
+// there is no digit.
+// 4. Given string S = "   foobar123!", the function should return false, because
+// there are spaces in front of it.
+// 5. Given string S = "foobar123", the function should return false, because
+// there is no special character.
 
 // Assume that:
 //    - the length of S is within the range [0...100];
@@ -29,47 +32,16 @@
 
 /***********************************************************************
  *  Answer
- **********************************************************************/
+ *********************************************************************j*/
 
  
 function checkPassword(S) {
-  if (S.length >= 6 && S.length <= 20) {
-    if (/[a-z]/.test(S) === true) {
-      if (/[A-Z]/.test(S) === true) {
-        if (/\d/.test(S) === true) {
-          if (/\s/g.test(S) === false) {
-            if (S.includes(":" || "!" || "@" || "#" || "$" || "%" || "^" || "&" || "*" || "(" || ")" || "_") === false) {
-              return true;
-            } else {
-              return false;
-            }
-          } else {
-            return false;
-          }
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    } else {
-      return false;
-    }
-  } else {
-    return false;
-  }
-}
-
-function checkPassword(S) {
-  if(S.length >= 6 && 
-    S.length <= 20 && 
-    /[a-z]/.test(S) && 
-    /[A-Z]/.test(S) && 
-    /\d/.test(S) && 
-    !(/\s/g.test(S)) &&
+  if (S.length >= 6 && 
+    !(/\s/.test(S)) && 
+    /^[0-9A-Za-z]+$/.test(S) && 
     S.includes(":" || "!" || "@" || "#" || "$" || "%" || "^" || "&" || "*" || "(" || ")" || "_")
-    ){
-      return true;
+    ) {
+    return true;
   } else {
     return false;
   }
