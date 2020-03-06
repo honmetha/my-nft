@@ -17,7 +17,7 @@
 // there is no digit.
 // 4. Given string S = "   foobar123!", the function should return false, because
 // there are spaces in front of it.
-// 5. Given string S = "foobar123", the function should return false, because
+// 5. Given string S = "FooBar123", the function should return false, because
 // there is no special character.
 
 // Assume that:
@@ -34,18 +34,6 @@
  *  Answer
  *********************************************************************j*/
 
- 
-function checkPassword(S) {
-  if (S.length >= 6 && 
-    !(/\s/.test(S)) && 
-    /^[0-9A-Za-z]+$/.test(S) && 
-    S.includes(":" || "!" || "@" || "#" || "$" || "%" || "^" || "&" || "*" || "(" || ")" || "_")
-    ) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
 function checkPassword(S) {
   let specialCharacter = [":", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_"];
@@ -57,7 +45,8 @@ function checkPassword(S) {
       }
     }
   }
-  if (count > 1 && S.length >= 6 && !(/\s/.test(S)) && /^[0-9A-Za-z]+$/.test(S)) {
+
+  if (count > 0 && S.length >= 6 && !(/\s/.test(S)) && /[a-z]/.test(S) && /[A-Z]/.test(S) && /\d/.test(S)) {
     return true;
   } else {
     return false;
