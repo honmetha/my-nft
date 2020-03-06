@@ -13,7 +13,7 @@
 // 1. Given string S = "FooBar123!", the function should return true.
 // 2. Given string S = "foobar123!", the function should return false, because
 // there is no uppercase letter.
-// 3. Given string S = "foobar!", the function should return false, because
+// 3. Given string S = "FooBar!", the function should return false, because
 // there is no digit.
 // 4. Given string S = "   foobar123!", the function should return false, because
 // there are spaces in front of it.
@@ -37,18 +37,18 @@
 
 function checkPassword(S) {
   let specialCharacter = [":", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_"];
-  let count = 0;
   for (arrItem of specialCharacter) {
     for (SItem of S) {
-      if (arrItem === SItem) {
-        count++;
+      if (arrItem === SItem &&
+        S.length >= 6 &&
+        !(/\s/.test(S)) &&
+        /[a-z]/.test(S) &&
+        /[A-Z]/.test(S) &&
+        /\d/.test(S))
+      {
+        return true;
       }
     }
   }
-
-  if (count > 0 && S.length >= 6 && !(/\s/.test(S)) && /[a-z]/.test(S) && /[A-Z]/.test(S) && /\d/.test(S)) {
-    return true;
-  } else {
-    return false;
-  }
+  return false;
 }
