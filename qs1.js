@@ -7,7 +7,7 @@
 // function solution(S);
 
 // that, given a string S of length N, returns true if S is secure (as described
-// above), and returns false if it is not secure.visible
+// above), and returns false if it is not secure. visible
 
 // Examples:
 // 1. Given string S = "FooBar123!", the function should return true.
@@ -15,7 +15,7 @@
 // there is no uppercase letter.
 // 3. Given string S = "FooBar!", the function should return false, because
 // there is no digit.
-// 4. Given string S = "   foobar123!", the function should return false, because
+// 4. Given string S = "foo bar 123!", the function should return false, because
 // there are spaces in front of it.
 // 5. Given string S = "FooBar123", the function should return false, because
 // there is no special character.
