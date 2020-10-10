@@ -35,9 +35,11 @@
  **********************************************************************/
 
 
-function checkPassword(S) {
+const checkPassword = S => {
   let specialCharacter = [":", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_"];
+
   for (arrItem of specialCharacter) {
+    
     for (SItem of S) {
       if (arrItem === SItem &&
         S.length >= 6 &&
@@ -50,5 +52,6 @@ function checkPassword(S) {
       }
     }
   }
+
   return false;
 }
