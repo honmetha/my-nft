@@ -1,7 +1,8 @@
 # Algorithms
 
-📦 :package: = NEW: Google problem
-✨ :sparkles: = SOLVE: Google problem
-🔧 :wrench: = OPTIMIZE: Google solutions
-🌐 :globe_with_meridians: = COMPARE: Other solutions
-🗑️ :wastebasket: = DELETED: Something
+Commit Messages  
+📦 NEW: Google problem  
+✨ SOLVE: Google problem  
+🔧 OPTIMIZE: Google solutions  
+🌐 COMPARE: Other solutions  
+🗑️ DELETED: Something  
