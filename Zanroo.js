@@ -47,6 +47,7 @@
  **********************************************************************/
 
 
+// Passed 7 original test cases
 const insertHTMLTags = (input1, input2) => {
   let openTagIndices = [];
   let closeTagIndices = [];
@@ -58,9 +59,34 @@ const insertHTMLTags = (input1, input2) => {
     if (input2.length === 2) {
       openTagIndices.push(input2[0].length);
       closeTagIndices.push(input2[0].length + input1[i].length - 1);
-    } else {
+    }
+
+    input2 = input2.join(input1[i]);
+  }
+
+  input2 = input2.split("");
+  
+  for (let k = 0; k < openTagIndices.length; k++) {
+    input2[openTagIndices[k]] = "<strong>" + input2[openTagIndices[k]];
+    input2[closeTagIndices[k]] += "</strong>";
+  }
+
+  return input2.join("");
+}
+
+
+// Passed originals and my test cases
+const insertHTMLTags = (input1, input2) => {
+  let openTagIndices = [];
+  let closeTagIndices = [];
+
+  for (let i = 0; i < input1.length; i++) {
+    input2 = input2.split(input1[i]);
+
+    if (input2.length === 1) return input2.join(input1[i]);
+    if (input2.length >= 2) {
       let totalLength = 0;
-      for (let j = 0; j < input2.length - 2; j++) {
+      for (let j = 0; j < input2.length - 1; j++) {
         openTagIndices.push(totalLength + input2[j].length);
         closeTagIndices.push(totalLength + input2[j].length + input1[i].length - 1);
         totalLength += input2[j].length + input1[i].length;
@@ -92,8 +118,11 @@ const insertHTMLTags = (input1, input2) => {
 // My test cases
 // [], "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
 // ["Lorem", "Ipsum", "printing"], ""
+// ["Lorem", "Ipsum", "printing"], "abc"
 // ["m"], "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
 // ["in"], "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
 // ["m i", "y t", "g i"], "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
 // [" "], "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
 // ["i", "s"], "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+// ["Lorem", "Hello"], "Lorem Ipsum Lorem Lorem IpsumLorem Ipsum Lorem Ipsum"
+// ["xt", "x"], "Textxxxxxxxt"
