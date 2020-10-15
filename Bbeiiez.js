@@ -9,12 +9,7 @@
 // Input: 3500.5
 // Output: "3,500.50"
 
-const formatPriceValue = (price) => {
-  price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  if (price[price.length - 3] === ".") return price;
-  if (price[price.length - 2] === ".") return price + "0";
-  return price + ".00";
-}
+const formatPriceValue = price => price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 // Test cases
 // 1
