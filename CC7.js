@@ -114,12 +114,65 @@ const primeNumber101 = (n) => {
 // Input: [ 6, 8, 16 ]
 // Output: 2
 
+// Test cases
+// []
+// [7]
+// [6,8,16]
+// [6,12,18,36,50]
+// [38,50,100,121]
+// [108,90,36]
+// [1,3,6,9]
 
-// 8. ค.ร.ม
+const findGreatestCommonDivisor = input => {
+  if (!input.length) return null;
+  if (input.length === 1) return input[0];
+  input = input.sort((a, b) => a - b);
+
+  let output = [input[0]];
+  for (let i = Math.floor(input[0] / 2); i > 0; i--) {
+    if (input[0] % i === 0) output.unshift(i);
+  };
+
+  for (let j = 1; j < input.length; j++) {
+    for (let k = output.length - 1; k > 0; k--) {
+      if (input[j] % output[k] === 0) break;
+      output.pop();
+    }
+  };
+
+  return output[output.length - 1];
+};
+
+// 8. ค.ร.น
 // ให้เขียนโปรแกรมหา ค.ร.น. ของ List ของตัวเลข
 // Input: [ 24, 48, 96 ]
 // Output: 96
 
+// Test cases
+// []
+// [7]
+// [24,48,96]
+// [2,3,5,7]
+
+const findLeastCommonMultiple = input => {
+  if (!input.length) return null;
+  if (input.length === 1) return input[0];
+  // input = input.sort((a, b) => b - a);
+
+  // let output = [];
+  // for (let i = 1; i <= input[1]; i++) {
+  //   output.unshift(input[0] * i);
+  // };
+
+  // for (let j = 1; j < input.length; j++) {
+  //   for (let k = output.length - 1; k > 0; k--) {
+  //     if (output[k] % input[j] === 0) break;
+  //     output.pop();
+  //   }
+  // };
+
+  return input;
+};
 
 // 9. n!
 // ให้เขียนโปรแกรมหา factorial n ( n! = 1×2×3×4×...×n )
@@ -145,6 +198,7 @@ const sortNumbers = (numArr = [], bool) => bool ? numArr.sort((a, b) => a - b) :
 
 // 11. 2 types sort by codecamp
 // ทำเหมือนข้อ 10 แต่ห้ามใช้ฟังก์ชัน sort() และ reverse()
+
 // Test cases
 // [5,3,8,5,4,3,7,1]
 // []
