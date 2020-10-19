@@ -76,7 +76,7 @@ const insertHTMLTags = (input1, input2) => {
 
 
 // Passed originals and my test cases
-const insertHTMLTags = (input1, input2) => {
+const insertHTMLTags2 = (input1, input2) => {
   let openTagIndices = [];
   let closeTagIndices = [];
 
@@ -126,3 +126,5 @@ const insertHTMLTags = (input1, input2) => {
 // ["i", "s"], "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
 // ["Lorem", "Hello"], "Lorem Ipsum Lorem Lorem IpsumLorem Ipsum Lorem Ipsum"
 // ["xt", "x"], "Textxxxxxxxt"
+
+module.exports = insertHTMLTags;
