@@ -20,3 +20,17 @@
 // - If the title is less than 3 words, just order the words in the title by length
 // in descending order (see example #4).
 // - Punctuation does not count towards a word's length.
+
+
+/***********************************************************************
+ *  Solution
+ **********************************************************************/
+
+
+const getHashTags = (str) => {
+  str = str.split(" ").sort((a, b) => b.length - a.length);
+  const output = [str[0], str[1], str[2]].map(word => '#' + word.toLowerCase());
+  return output;
+};
+
+module.exports = getHashTags;
