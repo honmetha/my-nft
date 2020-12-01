@@ -1,7 +1,6 @@
 // Prompt
-// Write a function that retrieves the top 3 longest words of a newspaper headline
-// and transforms them into hashtags. If multiple words tie for the same length,
-// retrieve the word that occurs first.
+// Write a function that retrieves the top 3 longest words of a newspaper headline and transforms
+// them into hashtags. If multiple words tie for the same length, retrieve the word that occurs first.
 
 // Examples
 // getHashTags("How the Avocado Became the Fruit of the Global Trade")
@@ -17,8 +16,8 @@
 // -> ["#visualizing", "#science"]
 
 // Notes
-// - If the title is less than 3 words, just order the words in the title by length
-// in descending order (see example #4).
+// - If the title is less than 3 words, just order the words in the title by length in descending order
+// (see example #4).
 // - Punctuation does not count towards a word's length.
 
 
