@@ -27,7 +27,7 @@
 
 
 const getHashTags = (str) => {
-  str = str.split(" ").sort((a, b) => b.length - a.length);
+  str = str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").split(" ").sort((a, b) => b.length - a.length);
   const output = [str[0], str[1], str[2]].map(word => '#' + word.toLowerCase());
   return output;
 };
