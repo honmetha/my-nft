@@ -1,0 +1,15 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Breed",
+            "value": "Maltipoo"
+        },
+        {
+            "trait_type": "Eye color",
+            "value": "Mocha"
+        }
+    ],
+    "description": "The world's most view animation",
+    "image": "https://gateway.pinata.cloud/ipfs/QmczUDdC8d8uWnB6gJGhM5fFsiAfxMpUjsoB26RK1JX8G7",
+    "name": "Nobita"
+}
